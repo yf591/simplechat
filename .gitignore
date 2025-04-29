@@ -15,3 +15,11 @@ frontend/build/
 # その他一般的な無視ファイル
 .DS_Store
 *.log
+
+# 環境変数ファイル
+.env
+.env.local
+.env.development
+.env.test
+.env.production
+*.env
