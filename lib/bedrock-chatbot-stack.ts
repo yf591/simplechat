@@ -157,7 +157,8 @@ export class BedrockChatbotStack extends cdk.Stack {
       memorySize: 128,
       role: lambdaRole,
       environment: {
-        MODEL_ID: modelId,
+        // MODEL_ID: modelId, // FASTAPI_API_URLを使用するため、コメントアウトした。
+        FASTAPI_API_URL: 'https://08a2-34-48-31-224.ngrok-free.app/', // Google Colabで取得したFastAPIのngrok URLに置き換えた。
       },
     });
 
