@@ -37,8 +37,6 @@ def lambda_handler(event, context):
         #     region = extract_region_from_arn(context.invoked_function_arn)
         #     bedrock_client = boto3.client('bedrock-runtime', region_name=region)
         #     print(f"Initialized Bedrock client in region: {region}")
-        
-        # print("Received event:", json.dumps(event))
 
         print("Received event:", json.dumps(event))
         
