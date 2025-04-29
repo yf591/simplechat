@@ -415,16 +415,16 @@ export class BedrockChatbotStack extends cdk.Stack {
       },
     });
     
-    // S3デプロイメントの後に設定を生成するように依存関係を設定
-    const websiteDeployment = new s3deploy.BucketDeployment(this, 'DeployWebsite', {
-      sources: [s3deploy.Source.asset(path.join(__dirname, '../frontend/build'))],
-      destinationBucket: websiteBucket,
-      distribution,
-      distributionPaths: ['/*'],
-    });
+    // // S3デプロイメントの後に設定を生成するように依存関係を設定
+    // const websiteDeployment = new s3deploy.BucketDeployment(this, 'DeployWebsite', {
+    //   sources: [s3deploy.Source.asset(path.join(__dirname, '../frontend/build'))],
+    //   destinationBucket: websiteBucket,
+    //   distribution,
+    //   distributionPaths: ['/*'],
+    // });
     
-    // 依存関係を設定
-    configResource.node.addDependency(websiteDeployment);
+    // // 依存関係を設定
+    // configResource.node.addDependency(websiteDeployment);
 
     // Outputs
     new cdk.CfnOutput(this, 'CloudFrontURL', {
