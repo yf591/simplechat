@@ -57,23 +57,18 @@ def lambda_handler(event, context):
         # print("Using model:", MODEL_ID) # モデルIDは不要なのでコメントアウトした
 
         print("Calling FastAPI API at:", FASTAPI_API_URL) # FastAPI呼び出しを示すログを追加した
-
-        # FastAPI APIを呼び出し
-        with urllib.request.urlopen(FASTAPI_API_URL) as response:
-            fastapi_response = response.read().decode('utf-8')
-            print("FastAPI response:", fastapi_response)<en
         
+
+        ### Bedrock API 呼び出しの部分を FastAPI API 呼び出しに置き換えた（ここから） ###
+
         # 会話履歴を使用
         messages = conversation_history.copy()
-        
+
         # ユーザーメッセージを追加
         messages.append({
             "role": "user",
             "content": message
         })
-        
-
-        ### Bedrock API 呼び出しの部分を FastAPI API 呼び出しに置き換えた（ここから） ###
 
         # FastAPI API に送るペイロードを構築
         # 最初はシンプルにユーザーメッセージをpromptとして送る
