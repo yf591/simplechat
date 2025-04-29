@@ -23,3 +23,6 @@ frontend/build/
 .env.test
 .env.production
 *.env
+
+# .ipynbファイル
+*.ipynb
